@@ -71,7 +71,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         removeFromCart,
         clearCart,
         likedBooks,
-        toggleLike }}>
+        toggleLike,
+         }}>
       {children}
     </AuthContext.Provider>
   );

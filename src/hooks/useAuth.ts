@@ -20,7 +20,17 @@ export const useAuth = () => {
     setErrorMessage("Credenciales inválidas");
   }
 };
-  
 
-  return { loginUser, logout, user, token,errorMessage };
+  const registerUser = async (name: string, email: string, password: string, type = "USER") => {
+    try {
+      const res = await api.post("/auth/register", { name, email, password, type });
+      //setUser(res.data);
+      console.log("Usuario registrado:", res.data);
+    } catch (err: any) {
+      console.error("Error registrando usuario:", err.response?.data?.message || err.message);
+      throw err;
+    }
+  };
+
+  return { loginUser, logout, registerUser,user, token,errorMessage };
 };
