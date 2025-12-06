@@ -1,0 +1,157 @@
+.book-carousel-section {
+  margin: 40px 0;
+}
+
+.book-carousel-title {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.book-carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.book-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+.book-carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+.book-carousel-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.book-carousel-btn.left {
+  margin-right: 10px;
+}
+
+.book-carousel-btn.right {
+  margin-left: 10px;
+}
+
+/* Tarjeta */
+.book-card {
+  width: 160px;
+  min-width: 160px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+}
+
+.book-card__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.book-card__info {
+  padding: 8px;
+}
+
+.book-card__title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.book-card__author {
+  font-size: 12px;
+  color: #555;
+}
+
+.book-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.heart-btn,
+.cart-btn {
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  transition: transform 0.15s ease;
+}
+
+.heart-btn:hover,
+.cart-btn:hover {
+  transform: scale(1.2);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 500px;           /* Tamaño controlado */
+  max-height: 90vh;       /* Por si el contenido es largo */
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 300px;      /* Tamaño máximo fijo */
+  object-fit: contain;    /* La clave: ajusta proporción sin deformar */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-close {
+  margin-top: 16px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}

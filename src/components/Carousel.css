@@ -1,0 +1,59 @@
+/* Carousel.css */
+.carousel {
+position: relative;
+width: 100%;
+max-width: 600px;
+margin: auto;
+overflow: hidden;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.carousel__inner {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+
+.carousel__image {
+min-width: 100%;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+
+
+.carousel__image--active {
+opacity: 1;
+}
+
+
+.carousel__button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0,0,0,0.4);
+border: none;
+color: white;
+font-size: 1.5rem;
+padding: 0.5rem 0.8rem;
+cursor: pointer;
+border-radius: 50%;
+z-index: 2;
+transition: background 0.3s;
+}
+
+
+.carousel__button:hover {
+background: rgba(0,0,0,0.7);
+}
+
+
+.carousel__button--prev {
+left: 10px;
+}
+
+
+.carousel__button--next {
+right: 10px;
+}

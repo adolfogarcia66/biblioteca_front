@@ -1,0 +1,212 @@
+.rentals__container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.rentals__title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.rentals__list {
+  display: grid;
+  gap: 20px;
+}
+
+.rentals__item {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background: #f3f3f3;
+  border-radius: 8px;
+}
+
+.rentals__image {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.rentals__info h3 {
+  margin: 0;
+}
+
+.rentals__author {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.rentals__empty {
+  color: #777;
+}
+
+.rentals__loading,
+.rentals__error {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+.rented-books {
+  padding: 20px;
+}
+
+.rented-books__title {
+  margin-bottom: 20px;
+}
+
+/* MENSAJES */
+.rented-books__loading {
+  color: #555;
+}
+
+.rented-books__error {
+  color: red;
+}
+
+.rented-books__empty {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* TABLA */
+.rented-books__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.rented-books__th {
+  padding: 10px;
+  background: #f4f4f4;
+  border-bottom: 2px solid #ccc;
+  text-align: left;
+}
+
+.rented-books__td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.rented-books__td--image {
+  text-align: center;
+}
+
+.rented-books__cover {
+  width: 60px;
+  border-radius: 6px;
+}
+
+/* ---------------------- */
+/* ACCIONES (BEM)         */
+/* ---------------------- */
+
+.rented-books__td--actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 160px;          /* evita que se corte */
+}
+
+/* Botones */
+.rented-books__btn {
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+/* Extender */
+.rented-books__btn--extend {
+  background-color: #4caf50;
+  color: white;
+  margin: 10%;
+}
+
+.rented-books__btn--extend:hover {
+  background-color: #449d48;
+}
+
+/* Devolver */
+.rented-books__btn--return {
+  background-color: #e53935;
+  color: white;
+}
+
+.rented-books__btn--return:hover {
+  background-color: #d32f2f;
+}
+
+/* Fondo del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Caja del modal */
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 6px 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.confirm-btn {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #27ae60;
+}
+
+.cancel-btn:hover {
+  background: #c0392b;
+}

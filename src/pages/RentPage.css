@@ -1,0 +1,44 @@
+.rent-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.rent-list {
+  margin-bottom: 20px;
+}
+
+.rent-item {
+  padding: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.rent-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rent-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rent-error {
+  margin-top: 15px;
+  color: red;
+}
+
+.rent-success {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}

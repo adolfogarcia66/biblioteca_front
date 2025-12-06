@@ -1,0 +1,81 @@
+/* Contenedor general */
+.home {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+/* HERO */
+.home__hero {
+  text-align: center;
+  padding: 20px 20px 10px;
+  background: linear-gradient(135deg, #2d79c7, #1c4a80);
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.home__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.home__subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.home__button {
+  display: inline-block;
+  background: white;
+  color: #1c4a80;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.home__button:hover {
+  background: #e5e5e5;
+}
+
+/* SECCIONES */
+.home__section {
+  margin: 20px auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+.home_carousel {
+  width: 100%;               /* Ocupa todo el ancho del viewport */
+  margin: 0 auto;            /* Centrado horizontal si hay contenido interno */
+  padding: 20px 0;           /* Solo padding vertical para separar del contenido */
+  box-sizing: border-box;    /* Asegura que padding no afecte el ancho total */
+  overflow: hidden;          /* Evita que elementos se salgan del contenedor */
+}
+
+.home__section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #2d79c7;
+  padding-left: 10px;
+}
+
+/* Grid de tarjetas */
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.home__card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.home__card:hover {
+  transform: translateY(-3px);
+}
