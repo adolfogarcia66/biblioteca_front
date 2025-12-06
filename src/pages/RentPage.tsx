@@ -13,18 +13,22 @@ const RentPage = () => {
       alert("Debes iniciar sesión para rentar.");
       return;
     }
-
+let allSuccess = true;
     setProcessing(true);
 
     for (const item of cart) {
-      await rentBook(item.id, user);
+      const result = await rentBook(item.id, user);
+       if (!result) {
+      allSuccess = false;
+      console.error(`No se pudo rentar el libro: ${item.name}`);
+    }
     }
 
     setProcessing(false);
 
-    if (success) {
-      clearCart();
-    }
+    if (allSuccess) {
+    clearCart(); // limpia el carrito solo si todos los libros se rentaron
+  } 
   };
 
   return (

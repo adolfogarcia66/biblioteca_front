@@ -79,3 +79,44 @@
 .home__card:hover {
   transform: translateY(-3px);
 }
+
+/* BUSCADOR */
+.home__search {
+  display: flex;
+  max-width: 450px;
+  margin: 0 auto; /* centra el buscador horizontalmente */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* para que el borde del botón quede dentro del contenedor */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home__search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.home__search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: #007bff; /* color principal */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.home__search-button:hover {
+  background-color: #0056b3;
+}
+
+.home__search-button svg {
+  margin-right: 6px; /* separa el icono del texto si pones "Buscar" */
+}

@@ -40,34 +40,7 @@
   white-space: nowrap;
 }
 
-/* BUSCADOR */
-.header__search {
-  flex: 1;
-  max-width: 450px;
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  background: #fff;
-  color: #000;
-
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-.header__search-icon {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-.header__search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: transparent;
-}
 
 .header__home-icon {
   font-size: 1.2rem;

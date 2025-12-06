@@ -5,13 +5,14 @@ import Carousel from "../components/Carousel";
 import { useBooks } from "../hooks/useBooks";
 import ErrorMessage from "../components/ErrorMessage";
 import BookCarousel from "../components/BookCarousel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartItem } from "../components/Cart";
+import { FiSearch } from "react-icons/fi";
 
 const HomePage = () => {
   const { user, cart, likedBooks, addToCart, removeFromCart, toggleLike } =
     useAuthContext();
-  const { books, loading, error } = useBooks();
+  const { books, loading, error,fetchBooks  } = useBooks();
 
   const [showFavoriteMessage, setShowFavoriteMessage] = useState(false);
   const [message, setMessage] = useState<string>("");
@@ -49,6 +50,14 @@ const HomePage = () => {
     setShowFavoriteMessage(true);
     setTimeout(() => setMessage(""), 2500);
   };
+const [search, setSearch] = useState("");
+  useEffect(() => {
+    fetchBooks(search); // actualiza los libros según búsqueda
+  }, [search]);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="home">
@@ -70,7 +79,21 @@ const HomePage = () => {
             "https://covers.odilo.io/publicms/bannerNews/banner_reto_lector_diciembre2.png",
           ]}
         ></Carousel>
+        
       </section>
+      <section className="home__search">
+  <input
+    type="text"
+    className="home__search-input"
+    placeholder="Buscar libros…"
+    value={search}
+    onChange={handleSearchChange}
+  />
+  <button className="home__search-button" onClick={() => fetchBooks(search)}>
+    <FiSearch />
+    Buscar
+  </button>
+</section>
       {/* Sección de categorías */}
       <section className="home__section">
         <h2 className="home__section-title">Categorías</h2>

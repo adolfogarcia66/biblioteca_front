@@ -11,14 +11,21 @@ interface CartProps {
   items: CartItem[];
   onRemoveItem?: (id: string) => void;
   onCheckout?: () => void;
+  
 }
 
-const Cart: React.FC<CartProps> = ({ items, onRemoveItem, onCheckout }) => {
+const Cart: React.FC<CartProps> = ({ items, onRemoveItem, onCheckout  }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
   const toggleCart = () => setIsOpen(!isOpen);
+
+  const handleCheckout = () => {
+    if (onCheckout) onCheckout(); // llama a la función pasada desde el padre
+       
+    setIsOpen(false); // cierra el modal automáticamente
+  };
 
   return (
     <div className="cart">
@@ -50,7 +57,7 @@ const Cart: React.FC<CartProps> = ({ items, onRemoveItem, onCheckout }) => {
               {onCheckout && (
                 <button
                   className="cart__checkout"
-                  onClick={onCheckout}
+                  onClick={handleCheckout} // ahora cerrará el modal
                 >
                   Ir a pagar
                 </button>

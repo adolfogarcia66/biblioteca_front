@@ -8,11 +8,13 @@ export const useBooks = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const fetchBooks = async () => {
+  const fetchBooks = async (query: string = "") => {
     try {
       setLoading(true);
       setError("");
-      const res = await api.get("/books/carousel");
+      const res = await api.get("/books/carousel", {
+        params: query ? { search: query } : {},
+      });
       setBooks(res.data);
     } catch (err: any) {
       setError(err.response?.data?.message || "Error obteniendo libros");
@@ -25,5 +27,5 @@ export const useBooks = () => {
     fetchBooks();
   }, []);
 
-  return { books, loading, error };
+  return { books, loading, error,fetchBooks };
 };
